@@ -18,6 +18,12 @@ def fib(n, cache):
             cache[n] = calculate
             return calculate
 
+def fib_chat(n, cache={0: 0, 1: 1}):
+    if n not in cache:
+        cache[n] = fib(n-1, cache) + fib(n-2, cache)
+    return cache[n]
+
+
 def timeit_fib_ori(n):
     time = timeit.timeit(lambda: fib_ori(n), number = 25)
     return time
@@ -28,17 +34,26 @@ def timeit_fib(n, dict):
 
 def main():
     result_dict = {}
-    time_fib_ori = [timeit_fib_ori(n) for n in range(36)]
-    time_fib = [timeit_fib(n, result_dict) for n in range(36)]
+    chat_dict = {}
+    #time_fib_ori = [timeit_fib_ori(n) for n in range(36)]
+    #time_fib = [timeit_fib(n, result_dict) for n in range(36)]
 
-    index = [n for n in range (36)]
+    #index = [n for n in range (36)]
 
-    plt.plot(index, time_fib_ori, color = "red")
-    plt.plot(index, time_fib, color = "blue")
-    plt.title("Time of 25 Executions of Indexs as a Function of Fibonacci Function")
-    plt.xlabel("Index (n)")
-    plt.ylabel("Time (s)")
-    plt.show()
+    #plt.plot(index, time_fib_ori, color = "red")
+    #plt.plot(index, time_fib, color = "blue")
+    #plt.title("Time of 25 Executions of Indexs as a Function of Fibonacci Function")
+    #plt.xlabel("Index (n)")
+    #plt.ylabel("Time (s)")
+    #plt.show()
+
+
+
+    time = timeit.timeit(lambda: fib(69, result_dict), number = 25)
+    time_chat = timeit.timeit(lambda: fib_chat(69, chat_dict), number = 25)
+
+    print("My Fib Functions: " + str(time))
+    print("ChatGPT Fib Functions: " + str(time_chat))
 
 if __name__ == "__main__":
     main()
