@@ -30,7 +30,7 @@ def func2(array, start, end):
 
 def main():
 
-    with open("ex2.json", "r") as inF:
+    with open("ex2.5.json", "r") as inF:
         content = json.load(inF)
 
     numb_index = count(content)#ex: [56, 84, 445]
@@ -46,7 +46,7 @@ def main():
         numb_container.append(len(container))
     
     plt.plot(numb_container, time_container, color="blue")
-    plt.title("Time Taken to Sort the Lists in JSON")
+    plt.title("Time Taken to Sort the Lists in JSON (Optimized Data)")
     plt.xlabel("List Length")
     plt.ylabel("Time")
     plt.show()
