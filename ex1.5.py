@@ -20,7 +20,7 @@ def fib(n, cache):
 
 def fib_chat(n, cache={0: 0, 1: 1}):
     if n not in cache:
-        cache[n] = fib(n-1, cache) + fib(n-2, cache)
+        cache[n] = fib_chat(n-1, cache) + fib_chat(n-2, cache)
     return cache[n]
 
 
@@ -50,7 +50,7 @@ def main():
 
 
     time = timeit.timeit(lambda: fib(69, result_dict), number = 25)
-    time_chat = timeit.timeit(lambda: fib_chat(69, chat_dict), number = 25)
+    time_chat = timeit.timeit(lambda: fib_chat(69), number = 25)
 
     print("My Fib Functions: " + str(time))
     print("ChatGPT Fib Functions: " + str(time_chat))
