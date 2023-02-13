@@ -30,7 +30,7 @@ def func2(array, start, end):
 
 def main():
 
-    with open("ex2.json", "r") as inF:
+    with open("ex2.5.json", "r") as inF:
         content = json.load(inF)
 
     numb_index = count(content)#ex: [56, 84, 445]
