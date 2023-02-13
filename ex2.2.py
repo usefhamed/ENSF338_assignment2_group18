@@ -46,9 +46,9 @@ def main():
         numb_container.append(len(container))
     
     plt.plot(numb_container, time_container, color="blue")
-    plt.title("Time Taken to Sort the Lists in JSON")
-    plt.xlabel("List Length")
-    plt.ylabel("Time")
+    plt.title("List Length of Each List in the ex2.json as a Function of Time Taken to Sort it for the Algorithm Given")
+    plt.xlabel("List Length (n)")
+    plt.ylabel("Time (s)")
     plt.show()
 
 

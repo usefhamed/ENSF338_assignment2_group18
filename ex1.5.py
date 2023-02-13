@@ -34,26 +34,23 @@ def timeit_fib(n, dict):
 
 def main():
     result_dict = {}
-    chat_dict = {}
-    #time_fib_ori = [timeit_fib_ori(n) for n in range(36)]
-    #time_fib = [timeit_fib(n, result_dict) for n in range(36)]
+    
+    time_fib_ori = [timeit_fib_ori(n) for n in range(36)]
+    time_fib = [timeit_fib(n, result_dict) for n in range(36)]
 
-    #index = [n for n in range (36)]
+    index = [n for n in range (36)]
 
-    #plt.plot(index, time_fib_ori, color = "red")
-    #plt.plot(index, time_fib, color = "blue")
-    #plt.title("Time of 25 Executions of Indexs as a Function of Fibonacci Function")
-    #plt.xlabel("Index (n)")
-    #plt.ylabel("Time (s)")
-    #plt.show()
+    plt.plot(index, time_fib_ori, color = "red", label="Original Fibonacci Function")
+    plt.plot(index, time_fib, color = "blue", label="Optimized Fibonacci Function")
+    plt.title("25 Executions of Different Indexes as a Function of Time for Two Different Recursive Fibonacci Functions")
+    plt.xlabel("Index (n)")
+    plt.ylabel("Time (s)")
+    plt.legend()
+    plt.show()
 
 
 
-    time = timeit.timeit(lambda: fib(69, result_dict), number = 25)
-    time_chat = timeit.timeit(lambda: fib_chat(69), number = 25)
 
-    print("My Fib Functions: " + str(time))
-    print("ChatGPT Fib Functions: " + str(time_chat))
 
 if __name__ == "__main__":
     main()

@@ -46,9 +46,9 @@ def main():
         numb_container.append(len(container))
     
     plt.plot(numb_container, time_container, color="blue")
-    plt.title("Time Taken to Sort the Lists in JSON (Optimized Data)")
-    plt.xlabel("List Length")
-    plt.ylabel("Time")
+    plt.title("A Graph Representing List Length as a Function of Time for the Normal Quick Sort Algorithm With Well Optimized Data")
+    plt.xlabel("List Length (n)")
+    plt.ylabel("Time (s)")
     plt.show()
 
 

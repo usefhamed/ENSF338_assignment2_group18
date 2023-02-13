@@ -38,9 +38,9 @@ def main():
         array_length.append(len(array))
     
     plt.plot(array_length, time_complexity, color="blue")
-    plt.title("Time Taken to Sort the Lists in JSON (Optimized)")
-    plt.xlabel("List Length")
-    plt.ylabel("Time")
+    plt.title("List Length of Each list in the ex2.json as a Function of Time Taken to Sort it for the Optimized Algorithm")
+    plt.xlabel("List Length (n)")
+    plt.ylabel("Time (s)")
     plt.show()
 
 if __name__=="__main__":
